@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7h4ts1xe04ij"]
+
+[ext_resource type="Texture2D" uid="uid://degb73hqj6np2" path="res://player/player_bullet/player_bullet.png" id="1_w0vvs"]
+[ext_resource type="Script" path="res://player/player_bullet/player_bullet.gd" id="2_ylsb4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71s4g"]
+atlas = ExtResource("1_w0vvs")
+region = Rect2(0, 0, 18, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw852"]
+atlas = ExtResource("1_w0vvs")
+region = Rect2(18, 0, 18, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tesso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71s4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw852")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="PlayerBullet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tesso")
+autoplay = "default"
+offset = Vector2(-0.5, 0)
+script = ExtResource("2_ylsb4")
